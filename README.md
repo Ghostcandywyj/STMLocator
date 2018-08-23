@@ -1,2 +1,2 @@
 # STMLocator
-STMLocator is a Supervised Topic Modeling method for automatically Locating the relevant source files for a given bug report.
+This is an original implementation of STMLocator of (Bug Localization via Supervised Topic Modeling)[...]
