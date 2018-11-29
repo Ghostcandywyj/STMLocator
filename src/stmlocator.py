@@ -30,14 +30,14 @@ def load_data(args):
     f_data.close()
 
     k_vocab_data = []
-	sourceLen = []
+    sourceLen = []
     k_vocab = open(args.inputB,'r')
     for l in k_vocab:
         rec = eval(l)
         k_vocab_data.append(rec[0])
-		sourceLen.append(rec[1])
+        sourceLen.append(rec[1])
     k_vocab.close()
-	
+    
     return data, k_vocab_data, sourceLen
 
 
@@ -337,8 +337,8 @@ def main(args):
     for d in k_vocab:
         k_vocab_total = k_vocab_total | set(d)
     k_vocab_total = list(k_vocab_total)
-	
-	iters = args.iter
+    
+    iters = args.iter
 
     beta_0 = args.beta
     beta_1 = args.beta
@@ -351,25 +351,25 @@ def main(args):
         train_start = time.time()
         pl, phi, omega, ptw = llda_cvb0_train(tr_data, k_vocab, k_vocab_total, beta_0, beta_1, alpha, sourceAplha, eta, mu, iters)
         print "fold", f, ": train time is", time.time() - train_start
-		
-	global outf
+        
+    global outf
     outf.close()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='inputs')
-	
-	parser.add_argument('-inputB', nargs='?', required=True, help='Input bug reports and their corresponding source files.')
-	parser.add_argument('-inputS', nargs='?', required=True, help='Input source files.')
-	parser.add_argument('-output', nargs='?', required=True, help='Output file.')
-	parser.add_argument('-alpha', default=50.0, type=float, help='Super parameter for generating topics/source files.')
-	parser.add_argument('-beta', default=0.01, type=float, help='Super parameter for generating common words distribution.')
-	parser.add_argument('-mu', default=0.01, type=float, help='Super parameter for generating co-occurrence words distribution.')
-	#parser.add_argument('-gamma', default=0.01, type=float, help='')
-	
-	parser.add_argument('-eta', default=0.01, type=float, help='Super parameter for generating Bernoulli distribution \Psi.')
-	parser.add_argument('-lenfunc', default='lin', nargs='?', help='Length function of LOC. (Linear-[lin], Logarithmic-[log], Exponential-[exp], Square root-[srt])')
-	parser.add_argument('-fold', default=10, type=int, help='Number of training folds.')
-	parser.add_argument('-iter', default=20, type=int, help='Number of training iterations for each fold.')
-	args = parser.parse_args()
+    
+    parser.add_argument('-inputB', nargs='?', required=True, help='Input bug reports and their corresponding source files.')
+    parser.add_argument('-inputS', nargs='?', required=True, help='Input source files.')
+    parser.add_argument('-output', nargs='?', required=True, help='Output file.')
+    parser.add_argument('-alpha', default=50.0, type=float, help='Super parameter for generating topics/source files.')
+    parser.add_argument('-beta', default=0.01, type=float, help='Super parameter for generating common words distribution.')
+    parser.add_argument('-mu', default=0.01, type=float, help='Super parameter for generating co-occurrence words distribution.')
+    #parser.add_argument('-gamma', default=0.01, type=float, help='')
+    
+    parser.add_argument('-eta', default=0.01, type=float, help='Super parameter for generating Bernoulli distribution \Psi.')
+    parser.add_argument('-lenfunc', default='lin', nargs='?', help='Length function of LOC. (Linear-[lin], Logarithmic-[log], Exponential-[exp], Square root-[srt])')
+    parser.add_argument('-fold', default=10, type=int, help='Number of training folds.')
+    parser.add_argument('-iter', default=20, type=int, help='Number of training iterations for each fold.')
+    args = parser.parse_args()
 
-	main(args)
+    main(args)
