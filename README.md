@@ -2,9 +2,9 @@
 This is an original implementation of STMLocator of (Bug Localization via Supervised Topic Modeling)[...]
 
 ## Usage
-'''
+
 python stmlocator -h
-'''
+```
 >  -inputB [INPUTB]    Input bug reports and their corresponding source files.
 >  -inputS [INPUTS]    Input source files.
 >  -output [OUTPUT]    Output file.
@@ -19,4 +19,4 @@ python stmlocator -h
 >                      Logarithmic-[log], Exponential-[exp], Square root-[srt])
 >  -fold FOLD          Number of training folds.
 >  -iter ITER          Number of training iterations for each fold.
-
+```
