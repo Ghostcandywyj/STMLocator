@@ -359,7 +359,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='inputs')
     
     parser.add_argument('-inputB', nargs='?', required=True, help='Input bug reports and their corresponding source files.')
-    parser.add_argument('-inputS', nargs='?', required=True, help='Input source files.')
+    parser.add_argument('-inputS', nargs='?', required=True, help='Input source files and their LOC.')
     parser.add_argument('-output', nargs='?', required=True, help='Output file.')
     parser.add_argument('-alpha', default=50.0, type=float, help='Super parameter for generating topics/source files.')
     parser.add_argument('-beta', default=0.01, type=float, help='Super parameter for generating common words distribution.')
