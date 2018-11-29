@@ -1,9 +1,9 @@
 # STMLocator
-This is an original implementation of STMLocator of (Bug Localization via Supervised Topic Modeling)[...]
+This is an original implementation of STMLocator of (Bug Localization via Supervised Topic Modeling)
 
 More information is able to added in the future.
 
-Same copy can be found in our (group site)[https://github.com/SoftWiser-group/STMLocator]
+Same copy can be found in our [group site](https://github.com/SoftWiser-group/STMLocator)
 
 ## Usage
 ```
