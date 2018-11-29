@@ -2,7 +2,9 @@
 This is an original implementation of STMLocator of (Bug Localization via Supervised Topic Modeling)[...]
 
 ## Usage
-
+'''
+python stmlocator -h
+'''
 >  -inputB [INPUTB]    Input bug reports and their corresponding source files.
 >  -inputS [INPUTS]    Input source files.
 >  -output [OUTPUT]    Output file.
