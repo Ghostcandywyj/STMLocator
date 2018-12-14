@@ -31,7 +31,7 @@ def load_data(args):
 
     k_vocab_data = []
     sourceLen = []
-    k_vocab = open(args.inputB,'r')
+    k_vocab = open(args.inputS,'r')
     for l in k_vocab:
         rec = eval(l)
         k_vocab_data.append(rec[0])
